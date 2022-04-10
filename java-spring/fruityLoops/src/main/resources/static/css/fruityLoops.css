@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+h1{
+	color: purple;
+}
+
+.table{
+	background-color:pink;
+	padding:20px;
+	
+}
+
+p{
+	padding:15px;
+	background-color:white;
+	
+}
