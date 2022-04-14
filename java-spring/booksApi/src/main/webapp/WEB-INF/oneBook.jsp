@@ -14,7 +14,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Title Here</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
     <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
@@ -24,24 +24,11 @@
 </head>
 <body>
     <div class="container"> <!-- Beginning of Container -->
-        <h1>All Books</h1>
-
-        <div class="box">
-        <c:forEach  var="i" items="${allBooks}" >
-        <p> 
-            Id: <c:out value="${ i.id}"></c:out>
-            <br>
-            <a href="/books/<c:out value = "${ i.id}"/>"><c:out value = "${ i.title}"/></a>
-            <br>
-            Language: <c:out value="${ i.language}"></c:out> 
-            <br>
-            Pages: <c:out value="${ i.numberOfPages}"></c:out> 
-        </p>
-            
-        </c:forEach>
-        </div>
-
-
+        
+        <h1 class="mt-3 mb-4">Title of Book: <c:out value="${ book.title }" /></h1>
+        <h4>Short Description: <c:out value="${ book.description }" /></h4>
+        <h4>Language: <c:out value="${ book.language }" /></h4>
+        <h4>Number of Pages: <c:out value="${ book.numberOfPages }" /></h4>
     </div> <!-- End of Container -->
 </body>
 </html>

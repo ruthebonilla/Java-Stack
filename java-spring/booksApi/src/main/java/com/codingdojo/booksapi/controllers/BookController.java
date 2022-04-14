@@ -1,5 +1,7 @@
 package com.codingdojo.booksapi.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,14 +18,27 @@ public class BookController {
 	@Autowired
 	BookService bookService;
 	
+	
+	@RequestMapping("/books")
+	public String index(Model model) {
+		List<Book> books = bookService.allBooks();
+		model.addAttribute("allBooks", books);
+		return "index.jsp";
+	}
+	
+	
+	
 	@RequestMapping("/books/{bookId}")
 	public String index(Model model, @PathVariable("bookId")Long bookId) {
 		
 		Book book = bookService.findBook(bookId);
 		
 		model.addAttribute("book", book);
-		return "index.jsp";
+		return "oneBook.jsp";
 	}
+	
+	
+	
 	
 	
 }
