@@ -2,18 +2,20 @@ package com.codingdojo.booksapi.controllers;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.bind.annotation.RestController;
 
 import com.codingdojo.booksapi.models.Book;
 import com.codingdojo.booksapi.services.BookService;
 
 
 
-@RestController
+@Controller
 public class HomeController {
 
 	
@@ -31,6 +33,7 @@ public class HomeController {
     }
     
     
+//    
     //creates a book
     @RequestMapping(value="/api/books", method=RequestMethod.POST)
     public Book create(
